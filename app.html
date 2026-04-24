@@ -660,7 +660,7 @@ let D={
 const f2=n=>(+n).toFixed(2).replace('.',',')+' €';
 const hB=h=>h==='eu'?'<span class="badge b-am">🇪🇺 EU-Ausland</span>':h==='drittland'?'<span class="badge b-co">🌍 Drittland</span>':'<span class="badge b-bl">🇩🇪 Inland</span>';
 const kB=k=>{const m={'Material & Waren':'b-bl','Werkzeug & Maschinen':'b-am','Fahrzeug & Transport':'b-co','Büro & Verwaltung':'b-pu','Verpflegung':'b-gn','Sonstiges':'b-gr'};return`<span class="badge ${m[k]||'b-gr'}">${k||'—'}</span>`;};
-const mL=r=>r.herk==='eu'?'<span class="badge b-am">0% RC</span>':r.herk==='drittland'?'<span class="badge b-co">0% EUSt</span>':`${r.mwst}%`;
+const mL=r=>r.herk==='eu'?'<span class="badge b-am">0% RC</span>':r.herk==='drittland'?'<span class="badge b-co">0% EUSt</span>':`<span style="white-space:nowrap">${r.mwst}%<br><span style="font-size:11px;color:var(--tx3)">${f2(r.brutto-r.netto)}</span></span>`;
 const stB=s=>s==='bezahlt'?'<span class="badge b-gn">✓ Bezahlt</span>':'<span class="badge b-am">Offen</span>';
 
 // ── NAVIGATION ────────────────────────────────────────────────────────────────
